@@ -1,0 +1,14 @@
+# Video Understanding Tools 依赖
+
+# HTTP 客户端
+httpx>=0.24.0
+
+# Google Gen AI SDK（可选，如果安装可以直接使用）
+google-genai>=0.3.0
+
+# 视频处理需要 FFmpeg（系统依赖，需要单独安装）
+# macOS: brew install ffmpeg
+# Ubuntu: apt install ffmpeg
+
+# Pillow（可选，用于图片处理）
+Pillow>=10.0.0
