@@ -312,15 +312,17 @@ async def cmd_check(args):
     else:
         missing.append("FILE_SERVICE_URL (可选，用于本地视频上传)")
 
+    is_ok = bool(api_key and base_url)
+
     print(json.dumps({
-        "success": len(missing) == 0 or (api_key and base_url),
+        "success": is_ok,
         "configured": configured,
         "missing": missing,
         "config_file": str(CONFIG_FILE),
         "models": {"default": Config.DEFAULT_MODEL, "fast": Config.FAST_MODEL, "pro": Config.PRO_MODEL},
     }, indent=2, ensure_ascii=False))
 
-    return 0 if api_key and base_url else 1
+    return 0 if is_ok else 1
 
 
 async def cmd_analyze(args):
