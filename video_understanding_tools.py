@@ -73,10 +73,10 @@ class Config:
     def MIGOO_API_KEY(self) -> str:
         return self.get("MIGOO_API_KEY", "")
 
-    # API Base URL（从配置文件读取，支持自定义）
+    # API Base URL（从配置文件读取，必须配置）
     @property
     def MIGOO_BASE_URL(self) -> str:
-        return self.get("MIGOO_BASE_URL", "https://beeai.test.shopee.io/inbeeai/compass-api")
+        return self.get("MIGOO_BASE_URL", "")
 
     @property
     def GEMINI_VIDEO_API_URL(self) -> str:

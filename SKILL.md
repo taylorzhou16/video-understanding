@@ -23,35 +23,18 @@ argument-hint: <视频文件路径或URL>
 
 ## API 配置
 
-**复用video-gen配置**：此skill复用video-gen的config.json和MIGOO_API_KEY。
+**配置文件路径**：`~/.claude/skills/video-understanding/config.json`
 
-**配置文件路径**：`~/.claude/skills/video-gen/config.json`
+**需要配置**：
+- `MIGOO_API_KEY` - API密钥
+- `MIGOO_BASE_URL` - Migoo Gemini API服务器地址
 
-**API调用方式**（基于Migoo Compass API）：
+**API调用方式**：使用 httpx 直接调用 Gemini API。
 
 ```python
-from google import genai
-from google.genai import types
+import httpx
 
-client = genai.Client(
-    api_key='<MIGOO_API_KEY>',
-    http_options=types.HttpOptions(
-        api_version='v1',
-        base_url='https://compass.llm.shopee.io/compass-api/v1',
-    )
-)
-
-# 视频理解示例
-response = client.models.generate_content(
-    model="gemini-2.5-pro",  # 或 gemini-3.1-pro-preview
-    contents=[
-        types.Part.from_uri(
-            file_uri="https://example.com/demo.mp4",
-            mime_type="video/mp4",
-        ),
-        "请详细分析这个视频的内容...",
-    ],
-)
+# API URL 格式: {MIGOO_BASE_URL}/v1/publishers/google/models/{model}:generateContent
 ```
 
 **支持的模型**：

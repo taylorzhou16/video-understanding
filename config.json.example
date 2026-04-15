@@ -1,4 +1,4 @@
 {
   "MIGOO_API_KEY": "your-api-key-here",
-  "MIGOO_BASE_URL": "https://beeai.test.shopee.io/inbeeai/compass-api"
+  "MIGOO_BASE_URL": "your-migoo-api-base-url-here"
 }

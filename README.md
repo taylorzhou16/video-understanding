@@ -22,11 +22,11 @@ pip install -r requirements.txt
 cp config.json.example config.json
 ```
 
-2. 编辑 `config.json`，填入你的API Key：
+2. 编辑 `config.json`，填入你的 API Key 和 Base URL：
 ```json
 {
   "MIGOO_API_KEY": "your-api-key-here",
-  "MIGOO_BASE_URL": "https://compass.llm.shopee.io/compass-api"
+  "MIGOO_BASE_URL": "your-migoo-api-base-url"
 }
 ```
 
